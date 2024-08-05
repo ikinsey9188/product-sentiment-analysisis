@@ -1,39 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-
-// Simulated dataset of product reviews
-const reviewsData = [
-  {
-    date: "15-07-2023",
-    product: "ZephyrBook Pro 2023",
-    rating: 2,
-    content: "Heating issues, poor customer support. Competitor's StarLite 2023 performs better."
-  },
-  {
-    date: "20-07-2023",
-    product: "LuminaFlex X1",
-    rating: 4,
-    content: "Great performance, good battery life. Suggestion: extend warranty period."
-  },
-  {
-    date: "25-07-2023",
-    product: "ZephyrBook Pro 2023",
-    rating: 3,
-    content: "Decent performance, but still some heating issues. Customer support has improved."
-  },
-  {
-    date: "30-07-2023",
-    product: "LuminaFlex X1",
-    rating: 5,
-    content: "Exceptional product. Outperforms competitors in every aspect."
-  },
-  {
-    date: "05-08-2023",
-    product: "ZephyrPhone 12",
-    rating: 4,
-    content: "Great camera, good battery life. UI could be more intuitive."
-  }
-];
 
 // Function to analyze a single review
 const analyzeReview = (review) => {
@@ -67,7 +33,16 @@ const ReviewAnalysis = ({ review }) => (
 
 // Main component
 const EnhancedReviewAnalysisSystem = () => {
+  const [reviewsData, setReviewsData] = useState([]);
   const [analyzedReviews, setAnalyzedReviews] = useState([]);
+
+  useEffect(() => {
+    // Fetch the JSON data
+    fetch('package-json.json')
+      .then(response => response.json())
+      .then(data => setReviewsData(data))
+      .catch(error => console.error('Error loading the JSON data:', error));
+  }, []);
 
   const analyzeAllReviews = () => {
     const analyzed = reviewsData.map(analyzeReview);
