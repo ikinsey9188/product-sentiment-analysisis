@@ -1,5 +1,5 @@
 # product-sentiment-analysisis
-I used prompt engineering in Claude AI to create a product sentiment analysis using mock product data to simulate an API call. You may click this link to access the final product: https://claude.site/artifacts/2a157853-458e-4b13-895a-6740dd038e4a
+I used prompt engineering in Claude AI to create a product sentiment analysis using mock product data to simulate an API call. You may [click here](https://claude.site/artifacts/2a157853-458e-4b13-895a-6740dd038e4a) to access the final product.
 
 # Enhanced Review Analysis System
 
@@ -28,6 +28,10 @@ This project is a React-based web application that analyzes product reviews and 
    ```
 
 ## Usage
+
+1. [Click here](https://claude.site/artifacts/2a157853-458e-4b13-895a-6740dd038e4a)
+   
+OR
 
 1. Start the development server:
    ```
